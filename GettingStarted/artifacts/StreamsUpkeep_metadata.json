@@ -1,0 +1,436 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_verifier",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "feedParamKey",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "feeds",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string",
+						"name": "timeParamKey",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "StreamsLookup",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "int192",
+						"name": "price",
+						"type": "int192"
+					}
+				],
+				"name": "PriceUpdate",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "DATASTREAMS_FEEDLABEL",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "DATASTREAMS_QUERYLABEL",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "FEE_ADDRESS",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "values",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "checkCallback",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "checkErrorHandler",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "upkeepNeeded",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "performData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "index",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "txHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "blockNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "blockHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "address",
+								"name": "source",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32[]",
+								"name": "topics",
+								"type": "bytes32[]"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Log",
+						"name": "log",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "checkLog",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "upkeepNeeded",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "performData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "feedIds",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "last_retrieved_price",
+				"outputs": [
+					{
+						"internalType": "int192",
+						"name": "",
+						"type": "int192"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "performData",
+						"type": "bytes"
+					}
+				],
+				"name": "performUpkeep",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "verifier",
+				"outputs": [
+					{
+						"internalType": "contract IVerifierProxy",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"checkCallback(bytes[],bytes)": {
+					"params": {
+						"extraData": "context data from streams lookup process.",
+						"values": "an array of bytes returned from data streams endpoint."
+					},
+					"returns": {
+						"_0": "boolean to indicate whether the keeper should call performUpkeep or not.",
+						"_1": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`."
+					}
+				},
+				"checkErrorHandler(uint256,bytes)": {
+					"returns": {
+						"performData": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.",
+						"upkeepNeeded": "boolean to indicate whether the keeper should call performUpkeep or not."
+					}
+				},
+				"performUpkeep(bytes)": {
+					"details": "The input to this method should not be trusted, and the caller of the method should not even be restricted to any single registry. Anyone should be able call it, and the input should be validated, there is no guarantee that the data passed in is the performData returned from checkUpkeep. This could happen due to malicious keepers, racing keepers, or simply a state change while the performUpkeep transaction is waiting for confirmation. Always validate the data passed in.",
+					"params": {
+						"performData": "is the data which was passed back from the checkData simulation. If it is encoded, it can easily be decoded into other types by calling `abi.decode`. This data should not be trusted, and should be validated against the contract's current state."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"checkCallback(bytes[],bytes)": {
+					"notice": "any contract which wants to utilize StreamsLookup feature needs to implement this interface as well as the automation compatible interface."
+				},
+				"checkErrorHandler(uint256,bytes)": {
+					"notice": "this is a new, optional function in streams lookup. It is meant to surface streams lookup errors."
+				},
+				"performUpkeep(bytes)": {
+					"notice": "method that is actually executed by the keepers, via the registry. The data returned by the checkUpkeep simulation will be passed into this method to actually be executed."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"GettingStarted/StreamsUpkeep.sol": "StreamsUpkeep"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts@1.2.0/src/v0.8/automation/interfaces/ILogAutomation.sol": {
+			"keccak256": "0x6efb298ce2d8d406fa48686a169ea7e50192878e25d3a2f9c102cfdeae340e34",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4de346eeefaef7c0655dbb22e7e3d75df163ede488d578f101d70ab03cebc1ec",
+				"dweb:/ipfs/QmYVrPMe5GVEUeTEZVFsubNkqXLUjYToNb8jAXfKLsh2Ni"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/automation/interfaces/StreamsLookupCompatibleInterface.sol": {
+			"keccak256": "0x425b2fbd5157912befe76769fa3556ebd9b3f1fd292e1df52229923ef679aee0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://73c5344cbe6d410e8b19a59e7ca6fbd130431c60aee9306b018539b6b1b3c8b9",
+				"dweb:/ipfs/QmWG2QMTs9CCxEzMiF1fZgzUZQZJ6eGQ4pTQawnKpwC6dd"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/llo-feeds/interfaces/IRewardManager.sol": {
+			"keccak256": "0x46ba26fa45d130ecc068bd7121bb0795721158b63bc5ac7caa4c86c8039778a9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cc892f4c525638eab677cb6edfeb99f8dbd4bed7a60855c5a81390e2193ff473",
+				"dweb:/ipfs/QmRQYSbVzS8hBkgosoKcZ1mV1q8pbgnbodgZ1vPg9f3MRN"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/llo-feeds/interfaces/IVerifierFeeManager.sol": {
+			"keccak256": "0x79cbc6d508196d9bc3fa33b6a76cfd0a4d45bb23f4e4a9b5997dc63685953bd2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6f15fa5491d64989a8fa1c9746826a12bd2d942e0a0a7651bb8a4664c87a7254",
+				"dweb:/ipfs/QmXAJAJid9UEtUQGKchV6xksQM91YFsZebvJTBcWGLwZnh"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/llo-feeds/libraries/Common.sol": {
+			"keccak256": "0x01180c94521f35663601e1baa7098d951753150b696ebfd1316c592e8560f7cc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://332b72c74bf17f941fcc43bbd5d95049ef7bcaec4d2bdc938581a43a6a81cda7",
+				"dweb:/ipfs/QmRtpihwWDK74huCzRgm1T6GcxfDjAFyV82WgPF9cZBYT5"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/vendor/openzeppelin-solidity/v4.8.3/contracts/interfaces/IERC165.sol": {
+			"keccak256": "0x34568ee847aaa6b80e18743f8e216a60420c201364cff3b14965835b92681831",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4e4000df7513871b3e8f456f0da0dc3550a72dc010867fd49ab49e8b4d08a7bc",
+				"dweb:/ipfs/QmQCLsQehJCcuc5QRCqEdCogXTdnyhvLzkvs7c3qdNULQV"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/vendor/openzeppelin-solidity/v4.8.3/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x72ada0b71bd2fcd32e67c29cf1f455c936cd565f69985c60f21eef2a0d526730",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://31bd5ba71f2e22bff7a5019686abce1a1a2707246657b2c22b9cc56d6282b616",
+				"dweb:/ipfs/QmUZUhVHNa9ZW9TxR7jCnpNdBhBWTf1ik1x6LBEkbxhPT3"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/vendor/openzeppelin-solidity/v4.8.3/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x527e858729af8197f6c8f99554d32bfc4f5a72b15975489c94809363d7ae522f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6828dfa867eaff18f383aad4ca4b5aaedb93109023d74aaf418fee6c06e556c2",
+				"dweb:/ipfs/QmXSQ9WnaJ6Ba9gvKvgNxDY7sa7ATJ9V55uwGSGCpBuJKu"
+			]
+		},
+		"@chainlink/contracts@1.2.0/src/v0.8/vendor/openzeppelin-solidity/v4.8.3/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0xa36a31b4bb17fad88d023474893b3b895fa421650543b1ce5aefc78efbd43244",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0f235b9175d95111f301d729566e214c32559e55a2b0579c947484748e20679d",
+				"dweb:/ipfs/QmSsNBuPejy1wNe2u3JSt2p9wFhrjvBjFrnAaNe1nDNkEA"
+			]
+		},
+		"GettingStarted/StreamsUpkeep.sol": {
+			"keccak256": "0xd67f3d09f874fe03179a691db3991e4f3d9e07dd5b8570a68ed983d04e297f34",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f9e496674a8e62346d11d8636803f0f6dff027635b6990af05e113bbacbdad26",
+				"dweb:/ipfs/QmTHRShSE2vaGzhUAccvFiwnFUr17dtMMphTd7KzCbAWka"
+			]
+		}
+	},
+	"version": 1
+}
